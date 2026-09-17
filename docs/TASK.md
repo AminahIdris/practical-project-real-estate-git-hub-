@@ -38,28 +38,28 @@ MVP Complete
 
 ## Phase 1 --- Documentation
 
--   \[🟢\] PRD
--   \[🟢\] System architecture
--   \[🟢\] API specification
--   \[🟢\] Database specification
--   \[🟢\] Technical specification
--   \[🟢\] README
--   \[🟢\] AGENTS.md
--   \[🟢\] Testing strategy
--   \[🟢\] Deployment specification
--   \[🟢\] Operations runbook
--   \[🟢\] ADRs
--   \[🟢\] Implementation tracker
+-   [🟢] PRD
+-   [🟢] System architecture
+-   [🟢] API specification
+-   [🟢] Database specification
+-   [🟢] Technical specification
+-   [🟢] README
+-   [🟢] AGENTS.md
+-   [🟢] Testing strategy
+-   [🟢] Deployment specification
+-   [🟢] Operations runbook
+-   [🟢] ADRs
+-   [🟢] Implementation tracker
 
 ## Phase 2 --- Project Foundation
 
--   [ ] Create Git repository
--   [ ] Create directory structure
--   [ ] Add `.gitignore`
--   [ ] Add `.env.example`
--   [ ] Add Docker Compose
--   [ ] Configure backend environment
--   [ ] Configure frontend environment
+-   [🟢] Create Git repository
+-   [🟢] Create directory structure
+-   [🟢] Add `.gitignore`
+-   [🟢] Add `.env.example`
+-   [🟢] Add Docker Compose
+-   [🟢] Configure backend environment (scaffold + config)
+-   [🟢] Configure frontend environment (Vite + React scaffold)
 
 ## Phase 3 --- Database
 
@@ -72,7 +72,7 @@ MVP Complete
 
 ## Phase 4 --- Backend
 
--   [ ] Implement health endpoint
+-   [🟢] Implement health endpoint (scaffold)
 -   [ ] Implement lead creation
 -   [ ] Implement lead listing
 -   [ ] Implement lead detail
@@ -85,7 +85,7 @@ MVP Complete
 
 ## Phase 5 --- Frontend
 
--   [ ] Create React application
+-   [🟢] Create React application (scaffold)
 -   [ ] Create customer enquiry/chat interface
 -   [ ] Create sales login
 -   [ ] Create lead list
