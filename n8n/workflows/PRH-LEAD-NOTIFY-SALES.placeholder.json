@@ -1,0 +1,7 @@
+{
+  "name": "PRH-LEAD-NOTIFY-SALES",
+  "description": "Placeholder – implement in Phase 6. Sends notification for qualified leads.",
+  "active": false,
+  "nodes": [],
+  "connections": {}
+}

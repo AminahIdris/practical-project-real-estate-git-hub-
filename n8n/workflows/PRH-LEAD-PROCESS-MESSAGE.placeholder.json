@@ -1,0 +1,7 @@
+{
+  "name": "PRH-LEAD-PROCESS-MESSAGE",
+  "description": "Placeholder – implement in Phase 6. Receives message event, calls AI extraction, validates, updates lead via backend API.",
+  "active": false,
+  "nodes": [],
+  "connections": {}
+}

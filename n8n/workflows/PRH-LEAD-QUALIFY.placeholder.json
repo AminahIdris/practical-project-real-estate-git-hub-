@@ -1,0 +1,7 @@
+{
+  "name": "PRH-LEAD-QUALIFY",
+  "description": "Placeholder – implement in Phase 6. Triggers deterministic scoring endpoint.",
+  "active": false,
+  "nodes": [],
+  "connections": {}
+}

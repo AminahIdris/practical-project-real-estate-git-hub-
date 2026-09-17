@@ -1,0 +1,7 @@
+{
+  "name": "PRH-FOLLOWUP-REMINDER",
+  "description": "Placeholder – implement in Phase 6. Scheduled reminder for pending follow-ups.",
+  "active": false,
+  "nodes": [],
+  "connections": {}
+}

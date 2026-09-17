@@ -5,21 +5,53 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-real_estate}
       POSTGRES_USER: ${POSTGRES_USER:-app_user}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-app_user} -d ${POSTGRES_DB:-real_estate}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      APP_SECRET_KEY: ${APP_SECRET_KEY:-replace-me}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-app_user}:${POSTGRES_PASSWORD:-change-me}@postgres:5432/${POSTGRES_DB:-real_estate}
+      AI_PROVIDER: ${AI_PROVIDER:-openai}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-gpt-4o-mini}
+      N8N_BASE_URL: http://n8n:5678
+      N8N_WEBHOOK_SECRET: ${N8N_WEBHOOK_SECRET:-replace-me}
+      FRONTEND_BASE_URL: ${FRONTEND_BASE_URL:-http://localhost:3000}
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
 
   frontend:
     build: ./frontend
+    ports:
+      - "3000:80"
     depends_on:
       - backend
 
   n8n:
     image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=Africa/Lagos
     volumes:
       - n8n_data:/home/node/.n8n
     depends_on:
