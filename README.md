@@ -1,4 +1,3 @@
-
 # Real Estate Lead Management & AI Qualification System
 
 A practical real-estate lead management system that captures customer
@@ -23,7 +22,7 @@ FastAPI Backend
 
 ## Technology
 
--   Frontend: React
+-   Frontend: React (Vite + TypeScript)
 -   Backend: Python + FastAPI
 -   Database: PostgreSQL
 -   Automation: n8n
@@ -58,6 +57,10 @@ docs/
   testing/
   operations/
   ADR/
+  AGENTS.md
+  TASK.md
+  IMPLEMENTATION.md
+  CONTRIBUTING.md
 frontend/
 backend/
 database/
@@ -69,13 +72,13 @@ tests/
 
 Use this order when making decisions:
 
-1.  `docs/product/PRD.md` --- why and what
-2.  `docs/architecture/SYSTEM_ARCHITECTURE.md` --- system structure
-3.  `docs/technical/API_SPEC.md` and `DATABASE.md` --- contracts
-4.  `docs/technical/TECHNICAL_SPEC.md` --- implementation approach
-5.  Code and tests --- implementation evidence
-6.  `TASK.md` --- what to do next
-7.  `IMPLEMENTATION.md` --- what has actually been done
+1.  `docs/product/PRD.md` — why and what
+2.  `docs/architecture/SYSTEM_ARCHITECTURE.md` — system structure
+3.  `docs/technical/API_SPEC.md` and `DATABASE.md` — contracts
+4.  `docs/technical/TECHNICAL_SPEC.md` — implementation approach
+5.  Code and tests — implementation evidence
+6.  `docs/TASK.md` — what to do next
+7.  `docs/IMPLEMENTATION.md` — what has actually been done
 
 ## Local Development
 
@@ -84,25 +87,36 @@ below works until the corresponding implementation task is completed.
 
 ### Backend
 
-``` bash
+```bash
 cd backend
 python -m venv .venv
 # activate the environment
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8000
 ```
+
+Health: http://localhost:8000/api/v1/health  
+Docs: http://localhost:8000/docs
 
 ### Frontend
 
-``` bash
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
+App: http://localhost:3000
+
+### Docker (all services)
+
+```bash
+docker compose up --build
+```
+
 ### Tests
 
-``` bash
+```bash
 pytest
 ```
 
